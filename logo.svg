@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs><clipPath id="in"><circle cx="100" cy="100" r="86"/></clipPath><clipPath id="fruit"><path d="M101 40 C131 40 148 68 143 98 C139 121 120 134 99 131 C76 128 60 110 61 87 C62 61 78 40 101 40 Z"/></clipPath></defs>
+  <circle cx="100" cy="100" r="97" fill="#FF8A3D"/>
+  <circle cx="100" cy="100" r="90" fill="#FFF4E0"/>
+  <circle cx="100" cy="100" r="86" fill="#FFC94A"/>
+  <g clip-path="url(#in)">
+    <circle cx="100" cy="100" r="64" fill="#FFD66E"/>
+    <g transform="translate(100 96) scale(0.88) translate(-100 -86) rotate(-22 100 86)">
+      <path d="M101 40 C131 40 148 68 143 98 C139 121 120 134 99 131 C76 128 60 110 61 87 C62 61 78 40 101 40 Z" fill="#FFA21F"/>
+      <path clip-path="url(#fruit)" d="M150 60 C150 110 130 140 96 140 C80 140 66 128 60 112 C84 122 110 120 126 104 C136 94 141 80 143 66 Z" fill="#FF6E3A"/>
+      <ellipse cx="86" cy="66" rx="11" ry="17" fill="#FFE29A" transform="rotate(28 86 66)"/>
+      <path d="M101 40 C101 34 103 30 106 27" fill="none" stroke="#7A4A1C" stroke-width="4" stroke-linecap="round"/>
+      <path d="M104 31 C114 18 134 15 146 21 C136 34 118 39 104 31 Z" fill="#3FA34D"/>
+      <path d="M106 30 C118 26 130 24 142 22" fill="none" stroke="#2C7A37" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <path d="M0 128 Q20 114 40 128 T80 128 T120 128 T160 128 T200 128 V200 H0 Z" fill="#1FA3C9"/>
+    <path d="M0 150 Q20 140 40 150 T80 150 T120 150 T160 150 T200 150 V200 H0 Z" fill="#1786AB"/>
+    <path d="M4 128 Q20 116 40 128 T80 128 T120 128 T160 128 T198 128" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M14 141 Q26 136 38 141 M92 140 Q104 135 116 140 M150 142 Q160 137 172 142" fill="none" stroke="#9FE3F5" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="60" cy="166" r="2.5" fill="#BFF0FB"/><circle cx="132" cy="170" r="2" fill="#BFF0FB"/>
+  </g>
+</svg>
