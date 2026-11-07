@@ -1,18 +1,77 @@
-<!doctype html><html lang="en"><head><title>Mango Tide Games</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="en"><head><title>Banana Swing – Mango Tide Games</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Banana Swing: hold to grab a vine, let go to fly. A free swinging game for iPhone by Mango Tide Games.">
+<meta property="og:title" content="Banana Swing">
+<meta property="og:description" content="Hold to grab a vine, let go to fly. Free on iPhone.">
+<meta property="og:image" content="https://mangotidegames.com/banana-swing/shot-1.jpg">
+<meta name="apple-itunes-app" content="app-id=6829056810">
+<link rel="icon" href="/banana-swing/icon.svg">
 <style>
-:root{--bg:#FFF4E0;--ink:#4A2A0E;--soft:#7A5A3A;--link:#1B7FA0;--orange:#E0701F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D}}
-:root[data-theme="dark"]{--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D}
+:root{--bg:#FFF4E0;--ink:#4A2A0E;--soft:#7A5A3A;--link:#1B7FA0;--orange:#E0701F;--card:#FFFBF2;--line:#EED9B6;--btn:#1E1A16;--btn-ink:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D;--card:#2C1F12;--line:#4A3520;--btn:#FFF4E0;--btn-ink:#22170D}}
+:root[data-theme="dark"]{--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D;--card:#2C1F12;--line:#4A3520;--btn:#FFF4E0;--btn-ink:#22170D}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif}
-main{max-width:640px;margin:0 auto;padding:40px 16px 64px}
-a{color:var(--link)}h1{font-size:30px;line-height:1.2;margin:.2em 0}h2{font-size:20px;margin:1.6em 0 .3em;color:var(--orange)}
-p{margin:.6em 0}.date{color:var(--soft);font-size:15px}.back{font-size:15px}
-.home{text-align:center;padding-top:12vh}.home img{width:150px;height:150px}.home p{color:var(--soft)}
-footer{margin-top:48px;font-size:15px;color:var(--soft)}
-</style></head><body><main class="home">
-<img src="/logo.svg" alt="Mango Tide Games logo">
-<h1>Mango Tide Games</h1>
-<p>Makers of Banana Swing, coming soon to iPhone.</p>
-<p>Help and questions: <a href="mailto:support@mangotidegames.com">support@mangotidegames.com</a></p>
-<footer><a href="/privacy/">Privacy Policy</a> · <a href="/rules/">Race Rules</a></footer>
+main{max-width:880px;margin:0 auto;padding:40px 16px 64px}
+a{color:var(--link)}
+.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.hero img{width:128px;height:128px;border-radius:28px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.hero div{flex:1;min-width:240px}
+h1{font-size:40px;line-height:1.1;margin:0 0 6px}
+h2{font-size:22px;margin:40px 0 8px;color:var(--orange)}
+.tag{font-size:20px;color:var(--soft);margin:0 0 16px}
+.get{display:inline-block;background:var(--btn);color:var(--btn-ink);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:12px}
+.get:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.note{font-size:14px;color:var(--soft);margin-top:8px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;scroll-snap-type:x mandatory}
+.shots img{height:220px;width:auto;border-radius:14px;scroll-snap-align:start;flex:none}
+ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--soft);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{width:36px;height:36px}
+</style></head><body><main>
+<section class="hero">
+<img src="/banana-swing/icon.svg" alt="Banana Swing app icon">
+<div>
+<h1>Banana Swing</h1>
+<p class="tag">Hold to grab a vine. Let go to fly.</p>
+<a class="get" href="https://apps.apple.com/app/id6829056810">Download free on the App Store</a>
+<p class="note">For iPhone. Free with optional in-app purchases. No ads.</p>
+</div>
+</section>
+
+<h2>See it in action</h2>
+<div class="shots" tabindex="0" aria-label="Screenshots, scroll sideways">
+<img src="/banana-swing/shot-1.jpg" alt="The monkey swinging through the jungle" loading="lazy">
+<img src="/banana-swing/shot-2.jpg" alt="The Hero Jet flying through space" loading="lazy">
+<img src="/banana-swing/shot-3.jpg" alt="A submarine diving under the sea" loading="lazy">
+<img src="/banana-swing/shot-4.jpg" alt="Walking around your own island" loading="lazy">
+<img src="/banana-swing/shot-5.jpg" alt="The main menu" loading="lazy">
+<img src="/banana-swing/shot-6.jpg" alt="The shop with animals to collect" loading="lazy">
+</div>
+
+<h2>What's inside</h2>
+<div class="cols">
+<ul>
+<li>One-touch swinging: easy to learn, hard to put down</li>
+<li>26 animals, each with its own special move</li>
+<li>24 rides, from a bathtub to a submarine and a space jet</li>
+<li>Your own island: a banana farm, a café, mini golf and more</li>
+</ul>
+<ul>
+<li>60 levels with bosses, plus a Daily Challenge</li>
+<li>Game modes including Banana Rush and the Weekly Cup</li>
+<li>Live Race: add friends by username and race them</li>
+<li>Play offline, with no account needed</li>
+</ul>
+</div>
+
+<h2>Help</h2>
+<p>Questions or problems: <a href="mailto:support@mangotidegames.com">support@mangotidegames.com</a></p>
+
+<footer>
+<img src="/logo.svg" alt="">
+<span>Made by Mango Tide Games</span>
+<a href="/press/">Press kit</a>
+<a href="/privacy/">Privacy Policy</a>
+<a href="/rules/">Race Rules</a>
+</footer>
 </main></body></html>
