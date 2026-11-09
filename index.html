@@ -8,45 +8,128 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="apple-itunes-app" content="app-id=6829056810">
+<meta name="theme-color" content="#8FD3F4">
 <link rel="icon" href="/banana-swing/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FFF4E0;--ink:#4A2A0E;--soft:#7A5A3A;--link:#1B7FA0;--orange:#E0701F;--card:#FFFBF2;--line:#EED9B6;--btn:#1E1A16;--btn-ink:#FFFFFF}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D;--card:#2C1F12;--line:#4A3520;--btn:#FFF4E0;--btn-ink:#22170D}}
-:root[data-theme="dark"]{--bg:#22170D;--ink:#FFF4E0;--soft:#D9C2A5;--link:#6CC7E3;--orange:#FF9A4D;--card:#2C1F12;--line:#4A3520;--btn:#FFF4E0;--btn-ink:#22170D}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif}
-main{max-width:880px;margin:0 auto;padding:40px 16px 64px}
+:root{--sky:#8FD3F4;--sky2:#C4ECFB;--sea:#3CC8C8;--sea2:#7FE0D6;--sand:#FFF6E2;--card:#FFFFFF;--ink:#3B2410;--soft:#6E5238;--link:#0F7A99;--title:#FFFFFF;--line:#F0DDBA;--cloud:#FFFFFF;--leaf:#3E9B3A;--leaf2:#2F7D2C;--sun:#FFE27A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:#2B3F78;--sky2:#465C9C;--sea:#156F7A;--sea2:#2A8C8F;--sand:#1F1A14;--card:#2A231B;--ink:#FFF4E0;--soft:#D9C2A5;--link:#7FD6F0;--line:#43362A;--cloud:#C9D4EE;--leaf:#2C6E2A;--leaf2:#22561F;--sun:#F3EBC8}}
+:root[data-theme="dark"]{--sky:#2B3F78;--sky2:#465C9C;--sea:#156F7A;--sea2:#2A8C8F;--sand:#1F1A14;--card:#2A231B;--ink:#FFF4E0;--soft:#D9C2A5;--link:#7FD6F0;--line:#43362A;--cloud:#C9D4EE;--leaf:#2C6E2A;--leaf2:#22561F;--sun:#F3EBC8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.6 ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;overflow-x:hidden}
 a{color:var(--link)}
-.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-.hero img{width:128px;height:128px;border-radius:28px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.hero div{flex:1;min-width:240px}
-h1{font-size:40px;line-height:1.1;margin:0 0 6px}
-h2{font-size:22px;margin:40px 0 8px;color:var(--orange)}
-.tag{font-size:20px;color:var(--soft);margin:0 0 16px}
-.get{display:inline-block;background:var(--btn);color:var(--btn-ink);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:12px}
-.get:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.note{font-size:14px;color:var(--soft);margin-top:8px}
-video{width:100%;height:auto;border-radius:14px;background:#000;display:block}
-.shots{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;scroll-snap-type:x mandatory}
-.shots img{height:220px;width:auto;border-radius:14px;scroll-snap-align:start;flex:none}
-ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 32px}
-footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--soft);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+h1,h2,.fred{font-family:Fredoka,ui-rounded,"SF Pro Rounded",system-ui,sans-serif;font-weight:600}
+
+/* Top: sky, sun, clouds, palms, swinging monkey, waves */
+.sky{position:relative;background:linear-gradient(var(--sky2),var(--sky) 70%);overflow:hidden;padding:56px 16px 120px;text-align:center}
+.sun{position:absolute;top:28px;right:12%;width:84px;height:84px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 14px color-mix(in srgb,var(--sun) 35%,transparent)}
+.cloud{position:absolute;left:0;fill:var(--cloud);opacity:.95;animation:drift linear infinite}
+.c1{top:30px;width:150px;animation-duration:70s;animation-delay:-10s}
+.c2{top:120px;width:110px;animation-duration:95s;animation-delay:-60s;opacity:.8}
+.c3{top:70px;width:190px;animation-duration:120s;animation-delay:-35s;opacity:.9}
+@keyframes drift{from{transform:translateX(-220px)}to{transform:translateX(calc(100vw + 40px))}}
+.palm{position:absolute;bottom:60px;width:180px;transform-origin:20% 100%;animation:sway 6s ease-in-out infinite alternate}
+.palm.l{left:-40px}
+.palm.r{right:-40px;transform:scaleX(-1);animation-name:sway-r;animation-delay:-3s}
+@keyframes sway{from{rotate:-2deg}to{rotate:3deg}}
+@keyframes sway-r{from{rotate:2deg}to{rotate:-3deg}}
+.swing{position:absolute;top:-8px;left:9%;width:70px;height:210px;transform-origin:50% 0;animation:swing 3.2s ease-in-out infinite alternate}
+@keyframes swing{from{rotate:28deg}to{rotate:-28deg}}
+.waves{position:absolute;left:0;bottom:0;width:200%;height:90px;animation:wave 14s linear infinite}
+.waves.back{bottom:16px;opacity:.6;animation-duration:22s;animation-direction:reverse}
+.waves path{fill:var(--sea)}
+.waves.back path{fill:var(--sea2)}
+.waves.front path{fill:var(--sand)}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cloud,.palm,.swing,.waves{animation:none}.cloud{transform:translateX(30vw)}.c2{transform:translateX(70vw)}.c3{transform:translateX(5vw)}.swing{rotate:12deg}}
+
+.hero{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.icon{width:116px;height:116px;border-radius:26px;box-shadow:0 8px 22px rgba(0,0,0,.18);animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.icon{animation:none}}
+h1{font-size:clamp(42px,9vw,68px);line-height:1;margin:14px 0 6px;color:var(--title);text-shadow:0 3px 0 #6B3E14,0 6px 14px rgba(0,0,0,.18);letter-spacing:.5px}
+.tag{font-size:21px;color:#173A55;margin:0 0 22px;font-weight:600}
+:root[data-theme="dark"] .tag{color:#E6EEFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:#E6EEFF}}
+.plank{display:inline-block;font-family:Fredoka,ui-rounded,system-ui,sans-serif;font-weight:600;font-size:20px;color:#FFF6E2;text-decoration:none;padding:14px 28px;border-radius:14px;
+background:repeating-linear-gradient(176deg,#A8692E 0 9px,#9A5F28 9px 11px,#B07433 11px 22px);border:3px solid #6B3E14;box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 5px 0 #5A3310,0 10px 18px rgba(0,0,0,.2);text-shadow:0 2px 0 #5A3310;transition:transform .12s}
+.plank:hover{transform:translateY(-2px)}
+.plank:active{transform:translateY(3px);box-shadow:inset 0 2px 0 rgba(255,255,255,.25),0 2px 0 #5A3310}
+.plank:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.note{font-size:15px;color:#173A55;margin:14px 0 0}
+:root[data-theme="dark"] .note{color:#D7E2FA}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#D7E2FA}}
+
+main{max-width:900px;margin:0 auto;padding:8px 16px 64px}
+h2{font-size:28px;margin:44px 0 14px;color:var(--ink);text-align:center}
+.winter{display:flex;gap:14px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 18px;margin-top:-10px}
+.winter b{font-family:Fredoka,ui-rounded,system-ui,sans-serif;font-weight:600}
+.winter span:first-child{font-size:34px;line-height:1}
+.frame{background:#8B5426;padding:8px;border-radius:20px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+video{width:100%;height:auto;border-radius:13px;background:#000;display:block}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:14px 2px 12px;scroll-snap-type:x mandatory}
+.shots img{height:210px;width:auto;border-radius:14px;scroll-snap-align:start;flex:none;border:3px solid var(--card);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px;transition:transform .15s}
+.card:hover{transform:translateY(-3px) rotate(-.4deg)}
+.card .e{font-size:30px;line-height:1}
+.card h3{font-family:Fredoka,ui-rounded,system-ui,sans-serif;font-weight:600;font-size:19px;margin:8px 0 2px}
+.card p{margin:0;color:var(--soft);font-size:15px;line-height:1.45}
+.help{text-align:center}
+.again{text-align:center;margin-top:40px}
+footer{max-width:900px;margin:0 auto;padding:18px 16px 40px;border-top:2px solid var(--line);font-size:15px;color:var(--soft);display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
 footer img{width:36px;height:36px}
-</style></head><body><main>
-<section class="hero">
-<img src="/banana-swing/icon.svg" alt="Banana Swing app icon">
-<div>
+@media (max-width:600px){.palm{width:110px;bottom:70px}.palm.l{left:-50px}.palm.r{right:-50px}.swing{left:-4px;width:56px;height:170px}.sun{width:60px;height:60px;right:6%}.plank{font-size:17px;padding:12px 20px}.sky{padding-top:40px}.winter{align-items:flex-start}}
+</style></head><body>
+
+<header class="sky">
+<div class="sun" aria-hidden="true"></div>
+<svg class="cloud c1" viewBox="0 0 150 60" aria-hidden="true"><ellipse cx="45" cy="38" rx="40" ry="20"/><ellipse cx="80" cy="28" rx="34" ry="26"/><ellipse cx="112" cy="40" rx="34" ry="18"/></svg>
+<svg class="cloud c2" viewBox="0 0 150 60" aria-hidden="true"><ellipse cx="45" cy="38" rx="40" ry="20"/><ellipse cx="80" cy="28" rx="34" ry="26"/><ellipse cx="112" cy="40" rx="34" ry="18"/></svg>
+<svg class="cloud c3" viewBox="0 0 150 60" aria-hidden="true"><ellipse cx="45" cy="38" rx="40" ry="20"/><ellipse cx="80" cy="28" rx="34" ry="26"/><ellipse cx="112" cy="40" rx="34" ry="18"/></svg>
+
+<svg class="palm l" viewBox="0 0 180 260" aria-hidden="true"><path d="M40 260 C46 190 52 130 70 80" stroke="#8B5A2B" stroke-width="14" fill="none" stroke-linecap="round"/><g fill="var(--leaf)"><path d="M70 80 C40 60 10 70 0 95 C25 80 50 82 70 80Z"/><path d="M70 80 C60 45 30 30 8 38 C35 45 55 60 70 80Z"/><path d="M70 80 C90 40 130 30 160 45 C125 48 95 62 70 80Z"/><path d="M70 80 C105 70 140 85 165 110 C130 95 100 88 70 80Z"/></g><g fill="var(--leaf2)"><path d="M70 80 C75 50 95 20 120 12 C100 35 85 58 70 80Z"/></g><circle cx="66" cy="86" r="7" fill="#7A4A1E"/><circle cx="76" cy="88" r="6" fill="#7A4A1E"/></svg>
+<svg class="palm r" viewBox="0 0 180 260" aria-hidden="true"><path d="M40 260 C46 190 52 130 70 80" stroke="#8B5A2B" stroke-width="14" fill="none" stroke-linecap="round"/><g fill="var(--leaf)"><path d="M70 80 C40 60 10 70 0 95 C25 80 50 82 70 80Z"/><path d="M70 80 C60 45 30 30 8 38 C35 45 55 60 70 80Z"/><path d="M70 80 C90 40 130 30 160 45 C125 48 95 62 70 80Z"/><path d="M70 80 C105 70 140 85 165 110 C130 95 100 88 70 80Z"/></g><g fill="var(--leaf2)"><path d="M70 80 C75 50 95 20 120 12 C100 35 85 58 70 80Z"/></g><circle cx="66" cy="86" r="7" fill="#7A4A1E"/><circle cx="76" cy="88" r="6" fill="#7A4A1E"/></svg>
+
+<svg class="swing" viewBox="0 0 70 210" aria-hidden="true">
+<path d="M35 0 C31 40 39 80 35 130" stroke="#4E8A2E" stroke-width="5" fill="none" stroke-linecap="round"/>
+<g fill="#4E8A2E"><ellipse cx="30" cy="40" rx="7" ry="3.5" transform="rotate(-30 30 40)"/><ellipse cx="40" cy="85" rx="7" ry="3.5" transform="rotate(30 40 85)"/></g>
+<g transform="translate(35 150)">
+<path d="M10 18 C26 20 30 38 18 46" stroke="#7A4A1E" stroke-width="5" fill="none" stroke-linecap="round"/>
+<ellipse cx="0" cy="18" rx="15" ry="18" fill="#8B5426"/>
+<ellipse cx="0" cy="22" rx="9" ry="11" fill="#F2D2A9"/>
+<path d="M-8 4 L-4 -22" stroke="#8B5426" stroke-width="7" stroke-linecap="round"/>
+<path d="M8 4 L3 -22" stroke="#8B5426" stroke-width="7" stroke-linecap="round"/>
+<circle cx="-17" cy="-6" r="7" fill="#8B5426"/><circle cx="17" cy="-6" r="7" fill="#8B5426"/>
+<circle cx="-17" cy="-6" r="4" fill="#F2D2A9"/><circle cx="17" cy="-6" r="4" fill="#F2D2A9"/>
+<circle cx="0" cy="-4" r="15" fill="#8B5426"/>
+<ellipse cx="0" cy="0" rx="11" ry="9" fill="#F2D2A9"/>
+<circle cx="-4.5" cy="-4" r="2.4" fill="#2A1608"/><circle cx="4.5" cy="-4" r="2.4" fill="#2A1608"/>
+<path d="M-4 3 Q0 6.5 4 3" stroke="#2A1608" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<path d="M-12 36 L-14 44 M12 36 L14 44" stroke="#8B5426" stroke-width="7" stroke-linecap="round"/>
+</g>
+</svg>
+
+<div class="hero">
+<img class="icon" src="/banana-swing/icon.svg" alt="Banana Swing app icon">
 <h1>Banana Swing</h1>
 <p class="tag">Hold to grab a vine. Let go to fly.</p>
-<a class="get" href="https://apps.apple.com/app/id6829056810">Download free on the App Store</a>
+<a class="plank" href="https://apps.apple.com/app/id6829056810">Get it free on the App Store</a>
 <p class="note">For iPhone. Free with optional in-app purchases. No ads.</p>
-<p class="note">❄️ Winter Fest: snow on your island, a Christmas tree and three winter collectables, 1 December – 6 January.</p>
 </div>
-</section>
+
+<svg class="waves back" viewBox="0 0 1600 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 Q100 15 200 40 T400 40 T600 40 T800 40 T1000 40 T1200 40 T1400 40 T1600 40 V90 H0Z"/></svg>
+<svg class="waves" viewBox="0 0 1600 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 Q100 25 200 50 T400 50 T600 50 T800 50 T1000 50 T1200 50 T1400 50 T1600 50 V90 H0Z"/></svg>
+<svg class="waves front" viewBox="0 0 1600 90" preserveAspectRatio="none" aria-hidden="true" style="animation-duration:30s"><path d="M0 74 Q100 60 200 74 T400 74 T600 74 T800 74 T1000 74 T1200 74 T1400 74 T1600 74 V90 H0Z"/></svg>
+</header>
+
+<main>
+<div class="winter"><span aria-hidden="true">❄️</span><span><b>Winter Fest, 1 December – 6 January:</b> snow on your island, a Christmas tree and three winter collectables.</span></div>
 
 <h2>See it in action</h2>
-<video controls playsinline preload="none" poster="/banana-swing/share.jpg" aria-label="Banana Swing trailer"><source src="/banana-swing/trailer.mp4" type="video/mp4"></video>
-<div class="shots" style="margin-top:12px" tabindex="0" aria-label="Screenshots, scroll sideways">
+<div class="frame"><video controls playsinline preload="none" poster="/banana-swing/share.jpg" aria-label="Banana Swing trailer"><source src="/banana-swing/trailer.mp4" type="video/mp4"></video></div>
+<div class="shots" tabindex="0" aria-label="Screenshots, scroll sideways">
 <img src="/banana-swing/shot-1.jpg" alt="The monkey swinging through the jungle" loading="lazy">
 <img src="/banana-swing/shot-2.jpg" alt="The Hero Jet flying through space" loading="lazy">
 <img src="/banana-swing/shot-3.jpg" alt="A submarine diving under the sea" loading="lazy">
@@ -56,23 +139,22 @@ footer img{width:36px;height:36px}
 </div>
 
 <h2>What's inside</h2>
-<div class="cols">
-<ul>
-<li>One-touch swinging: easy to learn, hard to put down</li>
-<li>26 animals, each with its own special move</li>
-<li>24 rides, from a bathtub to a submarine and a space jet</li>
-<li>Your own island: a banana farm, a café, mini golf and more</li>
-</ul>
-<ul>
-<li>60 levels with bosses, plus a Daily Challenge</li>
-<li>Game modes including Banana Rush and the Weekly Cup</li>
-<li>Live Race: add friends by username and race them</li>
-<li>Play offline, with no account needed</li>
-</ul>
+<div class="cards">
+<div class="card"><div class="e" aria-hidden="true">🌴</div><h3>One-touch swinging</h3><p>Easy to learn, hard to put down.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🐒</div><h3>26 animals</h3><p>Each with its own special move.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🚀</div><h3>24 rides</h3><p>From a bathtub to a submarine and a space jet.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🏝️</div><h3>Your own island</h3><p>A banana farm, a café, mini golf and more.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🏆</div><h3>60 levels</h3><p>With bosses, plus a Daily Challenge.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🍌</div><h3>Game modes</h3><p>Including Banana Rush and the Weekly Cup.</p></div>
+<div class="card"><div class="e" aria-hidden="true">🏁</div><h3>Live Race</h3><p>Add friends by username and race them.</p></div>
+<div class="card"><div class="e" aria-hidden="true">✈️</div><h3>Play offline</h3><p>No account needed.</p></div>
 </div>
 
+<div class="again"><a class="plank" href="https://apps.apple.com/app/id6829056810">Get Banana Swing free</a></div>
+
 <h2>Help</h2>
-<p>Questions or problems: <a href="mailto:support@mangotidegames.com">support@mangotidegames.com</a></p>
+<p class="help">Questions or problems: <a href="mailto:support@mangotidegames.com">support@mangotidegames.com</a></p>
+</main>
 
 <footer>
 <img src="/logo.svg" alt="">
@@ -81,4 +163,4 @@ footer img{width:36px;height:36px}
 <a href="/privacy/">Privacy Policy</a>
 <a href="/rules/">Race Rules</a>
 </footer>
-</main></body></html>
+</body></html>
